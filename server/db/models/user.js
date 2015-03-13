@@ -3,27 +3,50 @@ var crypto = require('crypto');
 var mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
+    first_name: {
+        type: String,
+        required: true
+    },
+    last_name: {
+        type: String,
+        required: true
+    },
     email: {
-        type: String
+        type: String,
+        required: true,
+        unique: true
     },
     password: {
-        type: String
+        type: String,
+        default: 'password1234'
     },
     salt: {
         type: String
     },
-    twitter: {
-        id: String,
-        username: String,
-        token: String,
-        tokenSecret: String
+    rsvp: {
+        type: Boolean,
+        default: null
     },
-    facebook: {
-        id: String
-    },
-    google: {
-        id: String
+    guests: {
+        type: Number,
+        default: 0
+    }, 
+    admin: {
+        type: Boolean,
+        default: false
     }
+    // twitter: {
+    //     id: String,
+    //     username: String,
+    //     token: String,
+    //     tokenSecret: String
+    // },
+    // facebook: {
+    //     id: String
+    // },
+    // google: {
+    //     id: String
+    // }
 });
 
 // generateSalt, encryptPassword and the pre 'save' and 'correctPassword' operations
