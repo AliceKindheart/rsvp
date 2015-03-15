@@ -1,0 +1,27 @@
+<form id="login-form" name="add_userForm" ng-submit="add_user({user: user})">
+
+    <div class="alert alert-danger" ng-show="error">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <span class="sr-only">Error:</span>
+        {{ error }}
+    </div>
+
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" ng-model="user.first_name" class="form-control" id="first_name" placeholder="Enter first name">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" ng-model="user.last_name" class="form-control" id="last_name" placeholder="Enter last name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" ng-model="user.email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" ng-model="user.password" class="form-control" id="login-password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+

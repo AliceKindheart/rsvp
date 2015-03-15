@@ -1,0 +1,12 @@
+"use strict";
+
+app.factory('EmailFactory', function($http) {
+	return {
+		getUser: function(email) {
+			return $http.get('/api/user').then(function (response) {
+				$scope.user.email = email;
+				return response.data;
+			});
+		}
+	};
+});
