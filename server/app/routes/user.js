@@ -5,6 +5,15 @@ module.exports = router;
 var mongoose = require('mongoose');
 var UserModel = mongoose.model('User');
 
+//get all users
+router.get ('/', function (req, res, next) {
+    UserModel.find({})
+        .exec(function (err, users) {
+            if (err) next(err);
+            res.send(users);
+    });
+});
+
 //find one user
 router.get('/:email', function (req, res, next) {
     UserModel.findOne({ email: req.params.email }, function (err, user) {
@@ -35,7 +44,7 @@ router.put('/', function (req, res, next) {
     console.log('rsvp', rsvp);
     var guests = req.body.guests;
     console.log('guests', guests);
-    UserModel.findOneAndUpdate( { rsvp: rsvp, guests: guests }, req.body, function (err, user) {
+    UserModel.findOneAndUpdate( { user: user, rsvp: rsvp, guests: guests }, req.body, function (err, user) {
         if (err) next(err);
         // user.rsvp=rsvp;
         user.save(function (err, user) {

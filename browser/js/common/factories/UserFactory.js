@@ -3,13 +3,18 @@
 app.factory('UserFactory', function($http) {
 	return {
 		getUser: function(email) {
-			return $http.get('/api/user/' + email).then(function (response) {
+			return $http.get('/api/user/' + $scope.login.email).then(function (response) {
+				return response.data;
+			});
+		},
+		getAllUsers: function () {
+			return $http.get('/api/user').then(function (response) {
+				console.log(response.data);
 				return response.data;
 			});
 		},
 		updateUser: function(newUser) {
 			var user = newUser.user;
-			console.log(user);
 			return $http.put('/api/user/' + user._id).then(function (response) {
 				return response.data;
 			});

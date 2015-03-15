@@ -1,0 +1,30 @@
+<section id="login-form">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+
+  <!-- Table -->
+  <table class="table">
+  	<thead>
+    	<tr>
+    		<th>Guest</th>
+    		<th>RSVP</th>
+    		<th>Attending Guests</th>
+    	</tr>
+	<tbody>
+		<tr ng-repeat="guest in guestList">
+			<td>{{ guest.first_name }} {{ guest.last_name }}</td>
+			<td>{{ guest.rsvp }}</td>
+			<td>{{ guest.guests }}
+			</td>		
+		</tr>
+	</tbody>
+  </table>
+</div>
+
+<div class="text-center">
+		<h3>Total Guests: </h3>
+		<button class="btn-success" >Add Guest</button>
+</div>
+
+</section>

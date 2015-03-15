@@ -1,0 +1,6 @@
+'use strict';
+app.factory("GuestListFactory", function () {
+	return {
+		guestlist: []
+	};
+});
