@@ -9,13 +9,24 @@ app.factory('UserFactory', function($http) {
 		},
 		getAllUsers: function () {
 			return $http.get('/api/user').then(function (response) {
-				console.log(response.data);
+				// console.log(response.data);
 				return response.data;
 			});
 		},
+		getTotalGuests: function (guestlist) {
+	    	var total = 0;
+		    for(var i = 0; i < guestlist.length; i++){
+		        var guest = guestlist[i];
+		        if (guest.guests) {
+		        	total += guest.guests;
+		        }
+		    }
+		    // console.log("total", total);
+			return total;
+		},
 		updateUser: function(newUser) {
-			var user = newUser.user;
-			return $http.put('/api/user/' + user._id).then(function (response) {
+			var user = newUser;
+			return $http.put('/api/user/' + user._id,user).then(function (response) {
 				return response.data;
 			});
 		},
@@ -25,6 +36,7 @@ app.factory('UserFactory', function($http) {
 			});
 		},
 		createUser: function (newUser) {
+			console.log('createUser was called');
 			var user = newUser.user;
 			return $http.post('/api/user', user).then(function (response) {
 				console.log("createUser return was called");

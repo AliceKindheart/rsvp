@@ -9,13 +9,25 @@
     text-align: center;
   }
     .jumbotron {
-    position: relative; 
+    position: center; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: 40vh;
     padding: 0;
   }
   .jumbo {
-   background-size: 100% 100%; 
-   height: 40vh;
+   
+   width: 80%;
+   height: 80vh;
+   display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .thanks {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   ul {
     width: 100%;
