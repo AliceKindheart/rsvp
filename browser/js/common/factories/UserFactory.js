@@ -13,6 +13,17 @@ app.factory('UserFactory', function($http) {
 				return response.data;
 			});
 		},
+		getTotalGuests: function (guestlist) {
+	    	var total = 0;
+		    for(var i = 0; i < guestlist.length; i++){
+		        var guest = guestlist[i];
+		        if (guest.guests) {
+		        	total += guest.guests;
+		        }
+		    }
+		    console.log("total", total);
+			return total;
+		},
 		updateUser: function(newUser) {
 			var user = newUser.user;
 			return $http.put('/api/user/' + user._id).then(function (response) {
@@ -25,6 +36,7 @@ app.factory('UserFactory', function($http) {
 			});
 		},
 		createUser: function (newUser) {
+			console.log('createUser was called');
 			var user = newUser.user;
 			return $http.post('/api/user', user).then(function (response) {
 				console.log("createUser return was called");

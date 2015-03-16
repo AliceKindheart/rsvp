@@ -1,20 +1,12 @@
 <form id="login-form" name="rsvpForm" ng-submit="rsvp({user: user})">
 
+    <h1>We hope you can make it!</h1>
+
     <div class="alert alert-danger" ng-show="error">
         <span class="glyphicon glyphicon-exclamation-sign"></span>
         <span class="sr-only">Error:</span>
         {{ error }}
     </div>
-
-    <!-- <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input type="text" ng-model="user.first_name" class="form-control" id="first_name" placeholder="Enter first name">
-    </div>
-    <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input type="text" ng-model="user.last_name" class="form-control" id="last_name" placeholder="Enter last name">
-    </div>
-    <div class="form-group"> -->
 
     <div class="form-group" method="post">
       <p>Will you be able to attend?</p>  
@@ -28,8 +20,6 @@
 <br>
 <input type="radio" name="2" value=2 ng-model="user.guests" checked>2
 
-  <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span>
-  </button> -->
   <ul class="dropdown-menu" ng-model="user.guests" role="menu">
     <li><a href="#" value=1>1</a></li>
     <li><a href="#" value=2>2</a></li>
@@ -38,22 +28,9 @@
     <li><a href="#" value=5>5</a></li>
     <li><a href="#" value=6>6</a></li>
   </ul><br>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" ui-sref="thankyou" class="btn btn-primary">Submit</button>
 </form>
 </div>
-   <!--  <p>How many guests (including yourself) will be in your party?</p>
-    <div class="form-group">
-        <label for="numguests">Total Number of Guests</label>
-        <input type="number" ng-model="user.guests" class="form-control" id="guests">
-    </div> -->
-     <!-- <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="text" ng-model="login.email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="login-password">Password</label>
-        <input type="password" ng-model="login.password" class="form-control" id="login-password" placeholder="Password">
-    </div>
- -->
-    
 
+<img class="cute" src="http://i.dailymail.co.uk/i/pix/2014/02/04/article-2551855-1B00458100000578-275_634x471.jpg" />
+  
