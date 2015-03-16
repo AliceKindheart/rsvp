@@ -1,7 +1,7 @@
 <section id="login-form">
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading"></div>
+  <div class="panel-heading"><h2>Guest List</h2></div>
 
   <!-- Table -->
   <table class="table">
@@ -23,8 +23,9 @@
 </div>
 
 <div class="text-center">
-		<h3>Total Guests: </h3>
-		<button class="btn-success" >Add Guest</button>
+		<h3>Total Guests: {{guestTotal}}</h3>
+		<button ui-sref="add_user" class="btn-success" >Add Guest</button>
+    <button ui-sref="admin_edit_user" class="btn-success" >Edit Guest</button>
 </div>
 
 </section>

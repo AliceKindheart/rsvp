@@ -1,6 +1,6 @@
 
-<form id="login-form" name="add_userForm" ng-submit="add_user({user: user})">
-    <h1>Add Guest</h1>
+<form id="login-form" name="admin_edit_userForm" ng-submit="edit_user({user: user})">
+    <h1>Edit Guest's Information Below</h1>
 
     <div class="alert alert-danger" ng-show="error">
         <span class="glyphicon glyphicon-exclamation-sign"></span>
@@ -26,4 +26,3 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-

@@ -38,13 +38,10 @@ router.delete('/:id', function (req, res, next) {
 });
 
 //update one user, used to be save
-router.put('/', function (req, res, next) {
-    console.log('req.body', req.body, 'user', user);
-    var rsvp = req.body.rsvp;
-    console.log('rsvp', rsvp);
-    var guests = req.body.guests;
-    console.log('guests', guests);
-    UserModel.findOneAndUpdate( { user: user, rsvp: rsvp, guests: guests }, req.body, function (err, user) {
+router.put('/:id', function (req, res, next) {
+    var id = req.body._id;
+    delete req.body._id;
+    UserModel.findOneAndUpdate( { _id : id }, req.body, function (err, user) {
         if (err) next(err);
         // user.rsvp=rsvp;
         user.save(function (err, user) {
@@ -56,7 +53,7 @@ router.put('/', function (req, res, next) {
 //create a new user, used to be in signup
 //Ensure index in order for uniqueness to work
 router.post('/', function (req, res, next) {
-    console.log(req.body);
+    console.log("req.body", req.body);
     UserModel.create(req.body, function (err, user) {
         if (err) {
             if (err.code === 11000 || err.code === 11001) {

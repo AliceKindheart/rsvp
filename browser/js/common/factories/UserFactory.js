@@ -9,7 +9,7 @@ app.factory('UserFactory', function($http) {
 		},
 		getAllUsers: function () {
 			return $http.get('/api/user').then(function (response) {
-				console.log(response.data);
+				// console.log(response.data);
 				return response.data;
 			});
 		},
@@ -21,12 +21,12 @@ app.factory('UserFactory', function($http) {
 		        	total += guest.guests;
 		        }
 		    }
-		    console.log("total", total);
+		    // console.log("total", total);
 			return total;
 		},
 		updateUser: function(newUser) {
-			var user = newUser.user;
-			return $http.put('/api/user/' + user._id).then(function (response) {
+			var user = newUser;
+			return $http.put('/api/user/' + user._id,user).then(function (response) {
 				return response.data;
 			});
 		},
